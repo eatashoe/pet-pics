@@ -82,7 +82,7 @@ export const pictureSlice = createSlice({
             }
       },
       setFilterValue: (state, action) => {
-          console.log(state.filterValue);
+        //   console.log(state.filterValue);
         state.filterValue = action.payload;
       },
       unloadFilter: (state) => {

@@ -33,15 +33,20 @@ function About() {
             <br></br>
             <span>By Winston Gong</span>
             <br></br>
+            <span style={{fontSize: "15px"}}>Image Source: http://eulerity-hackathon.appspot.com/pets</span>
+            <br></br>
             <br></br>
             <div style={{textAlign: "center", fontSize: "30px", textDecoration: "none"}}>
                 <a 
-                    href="https://github.com/eatashoe" 
+                    href="https://github.com/eatashoe/pet-pics" 
                     target="_blank" 
                     rel="noreferrer">
                     <i className="fab fa-github-square fa-2x"></i>
                 </a>
             </div>
+            {/* <br></br>
+            <br></br>
+            <br></br> */}
         </StyledAbout>
     );
 }
