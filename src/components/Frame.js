@@ -133,7 +133,7 @@ function Frame({title, url, descr, created, selectPicture, id}) {
                 }
                 }}>
                 <div className="info">
-                    <i class="fas fa-info-circle"
+                    <i className="fas fa-info-circle"
                         onMouseOver={() => {
                             // descriptionRef.current.zIndex = "1";
                             descriptionRef.current.style.opacity = 1;

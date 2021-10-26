@@ -5,8 +5,8 @@ import {
     selectPics,
     setFilterValue,
     update, 
-    selectFiltered,
-    selectFilterValue, 
+    // selectFiltered,
+    // selectFilterValue, 
     unloadFilter,
     selectFilterLoaded
  } from './pictureSlice';
@@ -56,9 +56,9 @@ function SearchBar() {
     const searchBarRef = React.useRef(null);
     const searchIconRef = React.useRef(null);
     const pics = useSelector(selectPics);
-    const filter = useSelector(selectFiltered);
+    // const filter = useSelector(selectFiltered);
     const filterLoaded = useSelector(selectFilterLoaded);
-    const filterValue = useSelector(selectFilterValue);
+    // const filterValue = useSelector(selectFilterValue);
     const dispatch = useDispatch();
 
 

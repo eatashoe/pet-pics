@@ -8,7 +8,7 @@ import {
     selectFiltered,
     clearSelect,
     selectPics,
-    selectFilterValue,
+    // selectFilterValue,
     selectFilterLoaded
 } from './pictureSlice';
 const StyledContainer = styled.div`
@@ -47,7 +47,6 @@ function Pictures(){
     const dispatch = useDispatch();
     const pics = useSelector(selectPics);
     const filtered = useSelector(selectFiltered);
-    const filterValue = useSelector(selectFilterValue);
     const filterLoaded = useSelector(selectFilterLoaded);
     // const [pics, loadPics] = React.useState('');
 
@@ -82,6 +81,13 @@ function Pictures(){
     }
     return(
         <StyledContainer 
+            style={
+                filterLoaded
+                ?
+                {columnCount: "1"}
+                :
+                null
+            }
             onClick={() => dispatch(clearSelect())}
             >
             {

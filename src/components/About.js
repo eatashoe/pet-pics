@@ -44,9 +44,6 @@ function About() {
                     <i className="fab fa-github-square fa-2x"></i>
                 </a>
             </div>
-            {/* <br></br>
-            <br></br>
-            <br></br> */}
         </StyledAbout>
     );
 }
