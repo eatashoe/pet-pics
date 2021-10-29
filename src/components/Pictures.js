@@ -84,7 +84,9 @@ function Pictures(){
             style={
                 filterLoaded
                 ?
-                {columnCount: "1"}
+                {
+                    columnCount: "0"
+                }
                 :
                 null
             }

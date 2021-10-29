@@ -15,6 +15,7 @@ const StyledFrame = styled.div`
     position: relative;
     border: 5px ${props => props.selected ? "dashed #FFB1B8;" : "solid #FFFFC5;"}
     transition: border 0.2s;
+    display: inline-block;
 
     -webkit-column-break-inside: avoid;
     page-break-inside: avoid;
