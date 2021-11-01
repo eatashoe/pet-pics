@@ -2,7 +2,12 @@ import React from 'react';
 import styled from 'styled-components'
 import { createAction } from '@reduxjs/toolkit';
 import { useSelector, useDispatch } from 'react-redux';
-import { clearSelect,selectPics,selectIsAll,selectSelected } from './pictureSlice';
+import { clearSelect,
+    selectPics,
+    selectIsAll,
+    selectSelected, 
+    selectFilterLoaded,
+    selectFiltered } from './pictureSlice';
 import useDownload from './useDownload';
 import SearchBar from './SearchBar';
 
@@ -36,6 +41,8 @@ function ToolBar() {
     const selected = useSelector(selectSelected);
     const pics = useSelector(selectPics);
     const isAllSelected = useSelector(selectIsAll);
+    const isFilterLoaded = useSelector(selectFilterLoaded);
+    const filtered = useSelector(selectFiltered);
     const download = useDownload();
 
     const selectAllAction = createAction('picture/selectAll', function prepare(selectAll) {
@@ -58,10 +65,20 @@ function ToolBar() {
     function downloadFiles(e){
         var links = []
         ,titles = [];
-        for(let i = 0; i < selected.length; i++){
-            if(selected[i]){
-                links.push(pics[i].url);
-                titles.push(pics[i].title);
+        if(isFilterLoaded){
+            for(let i = 0; i < selected.length; i++){
+                if(selected[i]){
+                    links.push(filtered[i].url);
+                    titles.push(filtered[i].title);
+                }
+            }
+        }
+        else{
+            for(let i = 0; i < selected.length; i++){
+                if(selected[i]){
+                    links.push(pics[i].url);
+                    titles.push(pics[i].title);
+                }
             }
         }
         download(e,links,titles);
